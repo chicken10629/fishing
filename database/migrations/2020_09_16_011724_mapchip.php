@@ -13,8 +13,10 @@ class Mapchip extends Migration
      */
     public function up()
     {
+        Schema::create('mapchip', function (Blueprint $table) {
         $table->Increments('id');
         $table->timestamps();
+        });
     }
 
     /**
@@ -24,6 +26,6 @@ class Mapchip extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('mapchip');
     }
 }

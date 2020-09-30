@@ -30,6 +30,6 @@ class Mappoint extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('mappoint');
     }
 }

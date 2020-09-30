@@ -18,7 +18,7 @@ class Consideration extends Migration
             $table->integer('user_id');
             $table->integer('map_id');
             $table->integer('place_id');
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class Consideration extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('consideration');
     }
 }

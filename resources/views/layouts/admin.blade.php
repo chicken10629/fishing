@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible"content="IE=edge">
         
         <!-- CSRF -->
-        <meta name="csrf-token" content="{{ csrf=token()}}">
         <title>@yield('title')</title>
         
         <!-- script -->
@@ -17,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         
         <!-- styles -->
-        <link href="{{ secure_asset('css/app.css) }}"rel="stylesheet">
+        <link href="{{ secure_asset('css/app.css') }}"rel="stylesheet">
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>

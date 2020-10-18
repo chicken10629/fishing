@@ -8,7 +8,7 @@
                     <div class="register-header card-header mx-auto">{{ __('釣り場新規登録') }}</div>
 
                     <div class="register-body card-body">
-                        <form method="POST" action="{{ route('place_register') }}">
+                        <form method="POST" action="{{ action('PlaceController@register') }}">
                             
                         
                             
@@ -18,7 +18,7 @@
                                 <label for="place_name" class="col-sm-4 col-form-label text-md-right">{{ __('釣り場名') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="place_name" type="place_name" class="form-control{{ $errors->has('place_name') ? ' is-invalid' : '' }}" name="place_name" value="{{ old('email') }}" required autofocus>
+                                    <input id="place_name" type="place_name" class="form-control{{ $errors->has('place_name') ? ' is-invalid' : '' }}" name="place_name" value="{{ old('place_name') }}" required autofocus>
 
                                     @if ($errors->has('place_name'))
                                         <span class="invalid-feedback">
@@ -32,7 +32,7 @@
                                 <label for="prefecture_id" class="col-md-4 col-form-label text-md-right">{{ __('都道府県') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="prefecture_id" type="prefecture_id" class="form-control{{ $errors->has('prefecture_id') ? ' is-invalid' : '' }}" name="prefecture_id" required>
+
                                 
                                 <select name="prefecture_id">
 <option value="" selected>都道府県</option>

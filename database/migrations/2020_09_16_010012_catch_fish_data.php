@@ -18,10 +18,10 @@ class CatchFishData extends Migration
             $table->integer('user_id');
             $table->integer('place_id');
             $table->integer('fish_id');
-            $table->integer('catched_time');
-            $table->integer('size');
+            $table->integer('catched_time')->nullable();
+            $table->integer('size')->nullable();
             $table->integer('mappoint_id');
-            $table->string('fish_image');
+            $table->string('fish_image')->nullable();
             $table->timestamps();
         });
     }

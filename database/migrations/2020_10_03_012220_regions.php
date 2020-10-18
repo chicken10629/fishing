@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Prefecture extends Migration
+class Regions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class Prefecture extends Migration
      */
     public function up()
     {
-            Schema::create('prefecture', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('prefecture_name');
-            $table->timestamps();
+            $table->string('region_name');
         });
+        
     }
 
     /**
@@ -27,6 +27,6 @@ class Prefecture extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('prefecture');
+         Schema::dropIfExists('regions');
     }
 }

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fish extends Model
 {
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -17,10 +16,14 @@ class Fish extends Model
      */
      
     protected $table = 'fish';
-    /*fishテーブルのみからデータを拾う。上に使うモデルを指定してるが、入れる必要ある？*/
+    /*fishテーブルのみからデータを拾う。上に使うモデルを指定してるが、
+    コントローラーはデフォで"ファイル名s"と複数形で拾ってくるので、名前を指定して"s"を付けない*/
     protected $fillable = 'fish_name';
     /*指定したカラム「fish_name」）のみを拾う。*/
-
+    public function dayfishing()
+    {
+        return $this->hasmany('App\Dayfishing');
+    }
 
     
 }

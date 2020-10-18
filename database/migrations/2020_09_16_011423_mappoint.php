@@ -18,7 +18,7 @@ class Mappoint extends Migration
             $table->integer('map_id');
             $table->integer('point_x');
             $table->integer('point_y');
-            $table->integer('mapchip_id');
+            $table->integer('mapchip_id')->nullable();
             $table->timestamps();
             });
     }

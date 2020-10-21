@@ -9,13 +9,11 @@
 
                 <div class="card-body">
                      最近登録された釣り場
-                     @foreach
-                     <a href="{{ route('place', $place->id)}}">{{ $place->place_name }}</a>
+                     @foreach($place as $places)
+                     <a href="{{ action('SelectplaceController@index', $place->id) }}">{{ $places->place_name }}</a>
                      @endforeach
                      都道府県から釣り場を検索
-                     {{ Form::select('prefecture_id', $prefecture, null, ['class' => 'form', 'id' => 'prefecture_id']) }}
-                         
-                     </form>
+                     {{ Form::select('prefecture_id', $prefecture, ['class' => 'prefecture_name', 'id' => 'prefecture_id']) }}
                      <button onclick="location.href='/place_register'">釣り場登録へ</button>
                 </div>
             </div>

@@ -12,12 +12,10 @@ class SelectplaceController extends Controller
 {
         public function index (Request $request)
     {   
-        $prefecture = Prefecture::orderBy('code','asc')->pluck('name', 'code');
+        $prefecture = Prefecture::orderBy('code','asc');
         /*ascは小さい順、pluckは指定のデータだけ配列でもってくる。
         ここではPrefectureから「nameとcode」を配列で拾って昇順にし、$prefectureへ代入*/
-        $prefecture = $prefecture -> prepend('都道府県', '');
-        /*prependは最初に値を追加するもの。都道府県とnullではない空の値を入れている。*/
-        $place = Place::all();
+        $place = Place::orderBy('id','desc');
         return view ('select_place', ['place' => $place , 'prefecture' => $prefecture]);
     }
 }

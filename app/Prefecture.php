@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class prefecture extends Model
+class Prefecture extends Model
 {
 
     /**
